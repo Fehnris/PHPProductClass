@@ -12,11 +12,11 @@ $some_product = new Product($searchArray, $dbAttributes, [mysqli conn]);
 #### $searchArray
 An associative array containing information about selecting a specific product.  To accomplish this, search fields can be specified to have the class 'match' products against search fields.  Search fields can be specified using an associative array with the following fields.
 
-###### 'fieldName'
+##### 'fieldName'
 The name of a database table field to be used in a select query after a 'where' statement.
-###### 'fieldValue'
+##### 'fieldValue'
 The value to search for in 'fieldName'.
-###### 'fieldType'
+##### 'fieldType'
 Can be 1 of 4 values 'b' 'd' 'i' 's'.  This value needs to match the data type of 'fieldValue'.  If 'fieldValue' stores an integer then 'fieldType' needs to be 'i'.  These values correspond to Mysqli's bind_param() function and are used internally with this method to create prepared statements.
 ##### Variable use example 1 (single search field)
 $searchArray = array('fieldName'=>'id', 'fieldValue'=>4, 'fieldType'=>'i');
