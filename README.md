@@ -14,8 +14,15 @@ An associative array containing information about selecting a specific product. 
 'fieldName' - The name of a database table field to be used in a select query after a 'where' statement.
 'fieldValue' - The value to search for in 'fieldName'.
 'fieldType' - Can be 1 of 4 values 'b' 'd' 'i' 's'.  This value needs to match the data type of 'fieldValue'.  If 'fieldValue' stores an integer then 'fieldType' needs to be 'i'.  These values correspond to Mysqli's bind_param() function and are used internally with this method to create prepared statements.
+##### Variable use example 1
+$searchArray = array('fieldName'=>'id', 'fieldValue'=>4, 'fieldType'=>'i');
+##### Variable use example 2 (multiple search fields)
+$searchArray[0] = array('fieldName'=>'id', 'fieldValue'=>4, 'fieldType'=>'i');
+$searchArray[1] = array('fieldName'=>'name', 'fieldValue'=>'Albatross', 'fieldType'=>'s');
 #### $dbAttributes
 An associative array to contain details about a product's database table.  The class by default looks for a database table called 'Products' with a primary field called 'id'.  If products are stored in a database table with these parameters this variable can be left as a blank variable.
+##### Variable use example
+$dbAttributes = array('TableName'=>'Products', 'UniqueIdentifierField'=>'id', 'FieldsToReturn'=>'*'); (Default values)
 #### <mysqli conn>
 This variable needs to be set to a valid mysqli connection.
 
