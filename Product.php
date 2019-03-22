@@ -148,14 +148,14 @@ class Product {
 
 	//Public Methods
 
-	protected function set_price($query, $searchParam) {
+	public function set_price($query, $searchParam) {
 		$searchParam = $this->check_params($searchParam);
 		$this->price = $this->run_query($query, $searchParam);
 		if(count($this->price) == 0) { $this->priceValid = false; }
 		else { $this->priceValid = true; }
 	}
 
-	protected function set_category($query, $searchParam) {
+	public function set_category($query, $searchParam) {
 		$searchParam = $this->check_params($searchParam);
 		$this->category = $this->run_query($query, $searchParam);
 		if(count($this->category) == 0) { $this->categoryValid = false; }
