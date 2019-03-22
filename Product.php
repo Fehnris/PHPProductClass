@@ -29,7 +29,7 @@ class Product {
 	public function __construct($searchParam, $dbAttributes, $dbConn) {
 		$this->set_DB_Attributes($dbAttributes);
 		self::$dbConn = $dbConn;
-		$this->set_details($searchParam);
+		$this->load_details($searchParam);
 	}
 
 	//Constructor optional input variables initialisation.
@@ -45,7 +45,7 @@ class Product {
 
 	//protected methods.
 
-	protected function set_details($searchParam) {
+	protected function load_details($searchParam) {
 		$searchParam = $this->check_params($searchParam);
 		$query = "SELECT * From ".$this->dbAttributes["TableName"]." where ".$this->construct_where_string($searchParam);
 		$this->details = $this->run_query($query, $searchParam);
@@ -148,14 +148,14 @@ class Product {
 
 	//Public Methods
 
-	public function set_price($query, $searchParam) {
+	public function load_price($query, $searchParam) {
 		$searchParam = $this->check_params($searchParam);
 		$this->price = $this->run_query($query, $searchParam);
 		if(count($this->price) == 0) { $this->priceValid = false; }
 		else { $this->priceValid = true; }
 	}
 
-	public function set_category($query, $searchParam) {
+	public function load_category($query, $searchParam) {
 		$searchParam = $this->check_params($searchParam);
 		$this->category = $this->run_query($query, $searchParam);
 		if(count($this->category) == 0) { $this->categoryValid = false; }
