@@ -5,7 +5,7 @@ The class can be extended to include more specific methods and properties for sp
 ## Class use example
 include("Product.php");
 
-$some_product = new Product($searchArray, $dbAttributes, <mysqli conn>);
+$some_product = new Product($searchArray, $dbAttributes, [mysqli conn]);
 
 ### Explanation of input variables
 
@@ -20,4 +20,4 @@ An associative array to contain details about a product's database table.  The c
 This variable needs to be set to a valid mysqli connection.
 
 ### Dependancies
-This class can work on its own or along side another PHP class from my other repository 'PHPWebsiteClass'.  This other class can create the neccessary mysqli connection which can be used as an input to the third variable '<mysqli conn>'.
+This class can work on its own or along side another PHP class from my other repository 'PHPWebsiteClass'.  This other class can create the neccessary mysqli connection which can be used as an input to the third variable '[mysqli conn]'.
