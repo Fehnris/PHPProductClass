@@ -24,6 +24,7 @@ $searchArray = array('fieldName'=>'id', 'fieldValue'=>4, 'fieldType'=>'i');
 Multiple search fields can be specified by creating an array containing each of the search arrays as below.
 
 $searchArray[0] = array('fieldName'=>'id', 'fieldValue'=>4, 'fieldType'=>'i');
+
 $searchArray[1] = array('fieldName'=>'name', 'fieldValue'=>'Albatross', 'fieldType'=>'s');
 #### $dbAttributes
 An associative array to contain details about a product's database table.  The class by default looks for a database table called 'Products' with a primary field called 'id'.  If products are stored in a database table with these parameters this variable can be left as a blank variable.
