@@ -30,7 +30,8 @@ $searchArray[1] = array('fieldName'=>'name', 'fieldValue'=>'Albatross', 'fieldTy
 An associative array to contain details about a product's database table.  The class by default looks for a database table called 'Products' with a primary field called 'id'.  If products are stored in a database table with these parameters this variable can be left as a blank variable.
 ##### Variable use example
 $dbAttributes = array('TableName'=>'Products', 'UniqueIdentifierField'=>'id', 'FieldsToReturn'=>'*'); (Default values)
-#### <mysqli conn>
+
+#### [mysqli conn]
 This variable needs to be set to a valid mysqli connection.
 
 ### Dependancies
